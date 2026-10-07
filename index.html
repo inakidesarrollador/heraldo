@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacidad de Heraldo</title>
+<style>
+/* Una sola columna de lectura, como un documento: encabezado con el nombre, resumen arriba, secciones cortas debajo. */
+:root{
+  --bg:#eef0f2; --surface:#f8f9fa; --ink:#1b2129; --muted:#56616d; --line:#cbd2d9; --accent:#a8322a; --ok:#256b3a; --ok-bg:#e2efe5;
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#11161c; --surface:#18202a; --ink:#e7ecf1; --muted:#9aa7b5; --line:#34404d; --accent:#e9695e; --ok:#7fd08f; --ok-bg:#16291c; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#11161c; --surface:#18202a; --ink:#e7ecf1; --muted:#9aa7b5; --line:#34404d; --accent:#e9695e; --ok:#7fd08f; --ok-bg:#16291c; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.page{max-width:44rem;margin-inline:auto;padding-inline:20px;padding-block:40px 64px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:6px;border-bottom:2px solid var(--accent);padding-bottom:18px}
+.brand{font-family:var(--display);font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-family:var(--display);font-size:clamp(1.7rem,4.5vw,2.3rem);line-height:1.15;margin:0;font-weight:700;text-wrap:balance}
+.date{color:var(--muted);font-size:14px}
+.summary{background:var(--ok-bg);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.summary b{color:var(--ok)}
+.summary p{margin:0}
+section{display:flex;flex-direction:column;gap:10px}
+h2{font-family:var(--display);font-size:1.25rem;margin:0;font-weight:700;text-wrap:balance}
+p{margin:0}
+ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+li::marker{color:var(--accent)}
+.where{font-family:var(--mono);font-size:.86em;color:var(--muted);overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;font-size:15px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+th,td{text-align:left;padding:10px 14px;vertical-align:top;border-top:1px solid var(--line)}
+thead th{border-top:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13.5px;display:flex;flex-direction:column;gap:8px}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <span class="brand">Heraldo</span>
+    <h1>Política de privacidad</h1>
+    <span class="date">Última actualización: 6 de octubre de 2026</span>
+  </header>
+
+  <div class="summary">
+    <p><b>En corto:</b> Heraldo no tiene cuentas, publicidad ni seguimiento, y no tiene servidores propios. Lo que lee de tu partida y de tu pantalla se procesa y se queda en tu PC.</p>
+  </div>
+
+  <section>
+    <p>Heraldo es una aplicación de escritorio gratuita para Age of Empires II: Definitive Edition, hecha por Iñaki Etura. Esta página explica qué datos usa, dónde quedan y qué consulta por internet.</p>
+  </section>
+
+  <section>
+    <h2>Qué lee y dónde queda</h2>
+    <ul>
+      <li><b>Tu grabación de la partida.</b> Es el archivo que el juego escribe en tu PC. Heraldo lo lee en tu PC para seguir el reloj, tus acciones y los avisos públicos de la partida. No sale de tu PC.</li>
+      <li><b>Tu pantalla, solo si activás “Lectura de pantalla”.</b> Durante la partida se toma una captura en memoria, se leen en tu PC los números de las zonas que marcaste y la imagen se descarta. La captura que sacás para marcar las zonas queda guardada en tu PC: es una sola imagen, que se reemplaza cada vez. Nada de esto se envía por internet.</li>
+      <li><b>Calidad de la lectura de pantalla.</b> Heraldo guarda en tu PC un resumen por partida (cuántas lecturas sirvieron en cada zona) y, mientras dura la partida, las últimas lecturas. Solo se convierten en un archivo si tocás “Guardar las lecturas”, y ese archivo queda donde vos elijas.</li>
+      <li><b>Tu registro de partidas, tus estadísticas, builds y ajustes.</b> Se guardan en tu PC.</li>
+    </ul>
+    <p>Heraldo no lee la memoria del juego ni nada del rival que no sea público: solo su civilización y los avisos que el juego da a todos los jugadores.</p>
+  </section>
+
+  <section>
+    <h2>Qué consulta por internet</h2>
+    <p>Heraldo consulta datos públicos del juego. En cada consulta viaja lo mínimo necesario, siempre cifrado (https).</p>
+    <div class="tw"><table>
+      <thead><tr><th>Servicio</th><th>Para qué</th><th>Qué se envía</th></tr></thead>
+      <tbody>
+        <tr><td>aoestats.io</td><td>Estadísticas de civilizaciones</td><td>Ningún dato tuyo</td></tr>
+        <tr><td>API pública de la comunidad<br><span class="where">aoe-api.worldsedgelink.com</span></td><td>ELO y últimas partidas</td><td>El número de perfil de los jugadores de tu partida o del jugador que buscás</td></tr>
+        <tr><td>AoE II Companion<br><span class="where">data.aoe2companion.com</span></td><td>Buscador de jugadores e historial de ELO</td><td>El nombre que escribís en el buscador o el número de perfil</td></tr>
+        <tr><td>GitHub, proyectos de SiegeEngineers<br><span class="where">raw.githubusercontent.com</span></td><td>Civilizaciones, mapas y árbol tecnológico</td><td>Ningún dato tuyo</td></tr>
+      </tbody>
+    </table></div>
+    <p>Como en cualquier consulta por internet, esos servicios ven tu dirección IP. Cada uno tiene su propia política de privacidad.</p>
+  </section>
+
+  <section>
+    <h2>El celular como segunda pantalla</h2>
+    <p>Si lo activás, Heraldo abre una página dentro de tu red wifi, protegida con una clave que va en el código QR. No es accesible desde internet. Por esa página viaja solo lo que muestra el overlay: el paso del build, el reloj y los avisos.</p>
+  </section>
+
+  <section>
+    <h2>Donaciones</h2>
+    <p>Heraldo es gratuita. Si alguien quiere colaborar, la app muestra un alias de Mercado Pago. La transferencia se hace fuera de Heraldo, desde la cuenta de Mercado Pago de quien dona: Heraldo no procesa pagos y no ve ni guarda ningún dato de pago. Donar no da nada a cambio dentro de la app.</p>
+  </section>
+
+  <section>
+    <h2>Menores</h2>
+    <p>Heraldo no recopila datos personales de nadie, tampoco de menores.</p>
+  </section>
+
+  <section>
+    <h2>Cómo borrar tus datos</h2>
+    <p>Desinstalar Heraldo borra la aplicación. Tus partidas, builds y ajustes están en la carpeta de datos de Heraldo de tu usuario de Windows, y podés borrarla cuando quieras. En la pestaña Registro podés exportar o borrar tus partidas.</p>
+  </section>
+
+  <section>
+    <h2>Cambios en esta política</h2>
+    <p>Si esta política cambia, la fecha de arriba se actualiza y la versión nueva se publica en esta misma dirección.</p>
+  </section>
+
+  <section>
+    <h2>Contacto</h2>
+    <p>Por consultas sobre esta política o sobre Heraldo, escribí a <a href="mailto:inakidesarrollador@gmail.com">inakidesarrollador@gmail.com</a>.</p>
+    <p>Heraldo no envía correos por su cuenta: el botón "Escribime" de la app solo abre tu programa de correo con el asunto cargado. Si escribís, recibo tu dirección de correo y lo que decidas mandar (por ejemplo una captura o una grabación de partida), y lo uso únicamente para responderte y corregir el problema. No lo comparto con nadie. Si querés que borre tu mensaje, pedilo a esa misma dirección.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Iñaki Etura</span>
+    <span lang="en">Age of Empires II: Definitive Edition © Microsoft Corporation. Heraldo was created under Microsoft's "Game Content Usage Rules" using assets from Age of Empires II: Definitive Edition, and it is not endorsed by or affiliated with Microsoft.</span>
+  </footer>
+</div>
+</body>
+</html>
